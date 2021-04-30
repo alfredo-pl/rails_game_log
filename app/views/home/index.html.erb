@@ -1,0 +1,8 @@
+<h1>HOME</h1>
+
+<%=render 'form', game: @game%>
+
+<% @games.each do |game| %>
+  <%= game.titulo %>
+<% end %>
+
