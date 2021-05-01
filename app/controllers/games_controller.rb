@@ -1,4 +1,4 @@
-class GameController < ApplicationController
+class GamesController < ApplicationController
     
     def create
         @game = Game.new(game_params)
@@ -17,7 +17,7 @@ class GameController < ApplicationController
     
     private 
     def game_params
-        params.require(:game).permit(:titulo, :rule)
+        params.require(:game).permit(:titulo,:imgfront, :rule, someimg: [])
     end
 
 
