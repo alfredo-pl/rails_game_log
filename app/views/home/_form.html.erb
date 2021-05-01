@@ -15,11 +15,23 @@
         <%= form.label :titulo %>
         <%= form.text_field :titulo %>
     </div>
-     <div class="field">
-        <%= form.label :rule %>
+
+    <div class="field">
+        <%= form.label :imgfront, "Add photo of the game's box"%>
+        <%= form.file_field :imgfront %>
+    </div>
+
+    <div class="field">
+        <%= form.label :rule, "Add PDF of game rules"%>
         <%= form.file_field :rule %>
     </div>
-     <div class="actions">
+
+    <div class="field">
+        <%= form.label :someimg, "Add images of game pieces"%>
+        <%= form.file_field :someimg, multiple: true %>
+    </div>
+
+    <div class="actions">
         <%= form.submit %>
     </div>
-    <%end%>
+<% end %>

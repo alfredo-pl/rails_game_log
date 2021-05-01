@@ -1,8 +1,17 @@
 <h1>HOME</h1>
 
-<%=render 'form', game: @game%>
+<%= render 'form', game: @game %>
+
+<br>
 
 <% @games.each do |game| %>
-  <%= game.titulo %>
+    <br>
+    <%= game.titulo %>
+    <%= image_tag game.imgfront.variant( resize: "100x100", colorspace: 'Gray' ).processed %>
+    <br>
+    <%= link_to 'download rules', rails_blob_path(game.rule, disposition: "attachment") %>
+    <br>
+    <% game.someimg.each do |image| %>
+        <%= link_to 'download images', rails_blob_path(image, disposition: "attachment") %>
+    <% end %>
 <% end %>
-
